@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Responsive Page</title>
+  <style>
+    :root{--bg:#f7f8fb;--card:#fff;--accent:#3b82f6;--text:#0f172a}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+    header{background:linear-gradient(90deg,#fff 0 40%, rgba(59,130,246,0.06) 100%);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:700;color:var(--accent)}
+    nav a{margin-left:14px;text-decoration:none;color:inherit;font-weight:600;opacity:.8}
+    .container{max-width:1000px;margin:32px auto;padding:0 20px}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
+    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 16px rgba(16,24,40,.06)}
+    h1{margin:0 0 10px;font-size:28px}
+    p.lead{margin:0 0 18px;color:#334155}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+    .feature{padding:16px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(15,23,42,0.03)}
+    .btn{display:inline-block;padding:10px 14px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:700}
+    footer{margin:42px 0 20px;color:#64748b;text-align:center;font-size:14px}
+    @media (max-width:880px){.hero{grid-template-columns:1fr}}
+  </style>
+</head>
+
+<h1 class="sr-only">Simple Responsive Page</h1>
+
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#60a5fa,#2563eb)"></div>
+      <div class="brand">MySite</div>
+    </div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h1>Beautiful, minimal HTML template</h1>
+          <p class="lead">A small, responsive starter page with clean styles — quick to customize and ship.</p>
+          <div style="display:flex;gap:12px;align-items:center">
+            <a class="btn" href="#get-started">Get started</a>
+            <a href="#learn" style="color:#2563eb;font-weight:700">Learn more →</a>
+          </div>
+
+          <div class="features" id="features">
+            <div class="feature">
+              <strong>Responsive</strong>
+              <div style="margin-top:6px;color:#475569">Layouts adapt to mobile and desktop automatically.</div>
+            </div>
+            <div class="feature">
+              <strong>Accessible</strong>
+              <div style="margin-top:6px;color:#475569">Semantic markup and readable contrast by default.</div>
+            </div>
+            <div class="feature">
+              <strong>Customizable</strong>
+              <div style="margin-top:6px;color:#475569">Easy colors, spacing and components to extend.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin:0 0 10px">Quick info</h3>
+          <p style="margin:0 0 12px">Use this card to highlight a signup, a screenshot, or key stats.</p>
+          <ul style="padding-left:18px;margin:0;color:#475569">
+            <li>Fast to edit</li>
+            <li>Small and dependency-free</li>
+            <li>Works offline</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+<h1> line 5 </h1>
+    <section id="contact" style="margin-top:26px">
+      <div class="card">
+        <h2 style="margin:0 0 10px">Contact</h2>
+        <p style="margin:0 0 12px;color:#475569">Leave your email and we'll get back to you.</p>
+        <form onsubmit="event.preventDefault(); alert('Thanks — form submitted!')">
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <input required type="email" placeholder="you@example.com" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef9" />
+            <button class="btn" type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> MySite — Built with simplicity.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
